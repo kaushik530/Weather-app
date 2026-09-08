@@ -1,7 +1,7 @@
 {
-  "name": "krusty-krab",
+  "name": "weather-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A weather application",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
@@ -10,16 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kaushik530/krusty-krab.git"
+    "url": "git+https://github.com/kaushik530/Weather-app.git"
   },
-  "keywords": [],
+  "keywords": [
+    "weather",
+    "javascript",
+    "webpack"
+  ],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/kaushik530/krusty-krab/issues"
+    "url": "https://github.com/kaushik530/Weather-app/issues"
   },
-  "homepage": "https://github.com/kaushik530/krusty-krab#readme",
+  "homepage": "https://github.com/kaushik530/Weather-app#readme",
   "devDependencies": {
     "css-loader": "^7.1.4",
     "html-webpack-plugin": "^5.6.8",
