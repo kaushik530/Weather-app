@@ -1,4 +1,24 @@
-import { getWeather } from "./weather.js";
+import clearDay from "./assets/clear-day.svg";
+import clearNight from "./assets/clear-night.svg";
+import cloudy from "./assets/cloudy.svg";
+import fog from "./assets/fog.svg";
+import partlyCloudyDay from "./assets/partly-cloudy-day.svg";
+import partlyCloudyNight from "./assets/partly-cloudy-night.svg";
+import rain from "./assets/rain.svg";
+import snow from "./assets/snow.svg";
+import wind from "./assets/wind.svg";
+
+const weatherIcons = {
+  "clear-day": clearDay,
+  "clear-night": clearNight,
+  cloudy: cloudy,
+  fog: fog,
+  "partly-cloudy-day": partlyCloudyDay,
+  "partly-cloudy-night": partlyCloudyNight,
+  rain: rain,
+  snow: snow,
+  wind: wind,
+};
 
 const locationInput = document.querySelector("#location");
 const weatherUnitButton = document.querySelector(".weatherUnit");
@@ -33,8 +53,18 @@ export function displayWeather(weather) {
   const windSpeed = document.createElement("p");
   windSpeed.textContent = `Wind: ${weather.windSpeed} km/h`;
 
-  const icon = document.createElement("p");
-  icon.textContent = weather.icon;
+  const iconContent = document.createElement("div");
+
+  const iconLogo = document.createElement("img");
+
+  const iconText = document.createElement("p");
+
+  iconLogo.src = weatherIcons[weather.icon];
+  iconLogo.alt = weather.conditions;
+  iconContent.classList.add("iconContent");
+  iconText.textContent = weather.icon;
+
+  iconContent.append(iconLogo, iconText);
 
   weatherContainer.append(
     location,
@@ -43,7 +73,7 @@ export function displayWeather(weather) {
     feelsLike,
     humidity,
     windSpeed,
-    icon,
+    iconContent,
   );
 }
 
